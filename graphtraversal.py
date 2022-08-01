@@ -57,17 +57,13 @@ class PriorityQueue(object):
         self.queue.append(data)
 
     def delete(self):
-        try:
-            max_val = 0
-            for i in range(len(self.queue)):
-                if self.queue[i][1] > self.queue[max_val][1]:
-                    max_val = i
-            item = self.queue[max_val]
-            del self.queue[max_val]
-            return item
-        except IndexError:
-            print()
-            exit()
+        max_val = 0
+        for i in range(len(self.queue)):
+            if self.queue[i][1] > self.queue[max_val][1]:
+                max_val = i
+        item = self.queue[max_val]
+        del self.queue[max_val]
+        return item
 
 
 class Solution:
