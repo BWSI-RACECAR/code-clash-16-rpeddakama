@@ -110,6 +110,9 @@ class Solution:
             locations[i] = cnt
             cnt += 1
 
+        if "Finish" not in locations.keys():
+            locations["Finish"] = len(locations)
+
         for i in dict:
             for j in dict[i]:
                 graph[locations[i]].append((locations[j], dict[i][j]))
